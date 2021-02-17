@@ -1,0 +1,12 @@
+.row {
+    padding: 0% 25% 0% 25%;
+}
+
+.imagen img {
+    width: 50%;
+}
+
+.two-column {
+    float: left;
+    width: 50%;
+}

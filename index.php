@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/rss.png" type="image/x-icon">
     <title>Lector de feeds</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
     <!--formulario para añadir la URL a leer-->
-    <div>
+    <div class=align>
         <form method="POST" action="">
             <input type="text" name="feedurl" placeholder="Escribe el feeds">&nbsp;<input type="submit" value="Enviar" name="submit">
         </form>
@@ -37,7 +38,9 @@
         //Descripción del canal
         $site = $feeds->channel->title;
         $sitelink = $feeds->channel->link;
-        echo '<h1>'.$site.'</h1>';
+        echo "<div class= align>";
+            echo '<h1>'.$site.'</h1>';
+        echo "</div>";
         //Por cada noticia:
         foreach ($feeds->channel->item as $item) {
             //Creamos variables con información de la noticia
@@ -46,23 +49,28 @@
             $description = $item->description;
             $postDate = $item->pubDate;
             $pubDate = date('D, d M Y',strtotime($postDate));
-            if($i>=5) break; //5 es el número de noticias a mostrar
+            if($i>=3) break; //3 es el número de noticias a mostrar
     
             //Mostramos información por pantalla de la noticia
-            echo '<div>';
-            echo '<div>';
-            //Título de la noticia
-            echo '<h2><a href="'.$link.'">'.$title.'</a></h2>';
-            echo '<span>'.$pubDate.'</span>';
+    echo '<div>';
+        //Título de la noticia
+        echo "<div class=two-column>";
+            echo "<div>";
+                echo '<h2 class=row two-colum><a href="'.$link.'">'.$title.'</a></h2>';
+                echo '<span class=row two-colum>'.$pubDate.'</span>';
             echo '</div>';
-            //Cuerpo de la noticia
-            echo '<div>';
-            //echo implode(' ', array_slice(explode(' ', $description), 0, 20)) . "...";
-            echo '<div>'.$description.'</div>';
-            echo '<a href="'.$link.'">Leer más</a>';
-            echo '</div>';
-            echo '</div>';
-            $i++;
+        echo "</div>";
+                //Cuerpo de la noticia
+                echo '<div class=row>';
+                //echo implode(' ', array_slice(explode(' ', $description), 0, 20)) . "...";
+                echo '<div class=imagen two-colum>'.$description.'</div>';
+                echo '<a href="'.$link.'">Leer más</a>';
+                echo '</div>';
+                echo '</div>';
+                $i++;
+            echo "</div>";
+        echo "</div>";
+
         }
     }else{
         //Error que se muestra si no hay nada que mostrar

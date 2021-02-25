@@ -1,12 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: TiemposText;
+    margin: 0;
+}
+
 .row {
-    padding: 0% 25% 0% 25%;
+    padding: 2% 10% 2% 15%;
 }
 
-.imagen img {
-    width: 50%;
-}
 
-.two-column {
+/* Create two equal columns that floats next to each other */
+
+.column {
     float: left;
-    width: 50%;
+    width: 45%;
+    padding: 10px;
+    height: 300px;
+    /* Should be removed. Only for demonstration */
+}
+
+.padd-titulo {
+    padding: 0.5%;
+}
+
+.linea {
+    border-top: solid 5px rgb(212, 212, 255, 0.1);
+}
+
+.column a {
+    color: black;
+    text-decoration: none;
+    font-size: 2vw;
+    line-height: 90%;
+}
+
+.colore {
+    color: white;
+    background-color: #001c4c;
+    text-align: center;
+    font-size: 3.2vw;
+    text-transform: uppercase;
+}
+
+.colore2 {
+    color: #4f89b9;
+    font-size: 1.75vw;
+    line-height: 140%;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.description *:not(:first-child) {
+    display: none;
+}
+
+.description *:first-child {
+    width: 84%;
+}
+
+.oculimg *:first-child {
+    display: none;
+}
+
+.b *:not(:first-child) {
+    display: none;
+}
+
+#padding-top {
+    padding: 2% 0%;
+}
+
+iframe {
+    display: none !important;
+}
+
+
+/*ESTILOS DEL INPUT*/
+
+.form-style-9 {
+    max-width: 450px;
+    background: #FAFAFA;
+    padding: 30px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border: 6px solid #001c4c;
 }
